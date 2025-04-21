@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GerenciadorDeTarefasApplication<gerenciador_de_tarefas>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.api.gerenciador_de_tarefas.GerenciadorDeTarefasApplication",
+            "projectName": "gerenciador_de_tarefas",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

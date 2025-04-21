@@ -2,6 +2,8 @@ package com.api.gerenciador_de_tarefas.model;
 
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Data;
@@ -23,5 +25,6 @@ public class Tarefa {
     @NotNull
     private String status; // Ex.: "Em andamento", "Concluído"
 
+    @CreationTimestamp
     private LocalDateTime dataCriacao;
 }
