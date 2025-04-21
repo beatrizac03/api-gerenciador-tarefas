@@ -1,4 +1,10 @@
 spring:
+  application:
+    name: gerenciador_de_tarefas
+  sql: 
+    init:
+      mode: always
+
   config:
     import: optional:file:.env[.properties]
 
