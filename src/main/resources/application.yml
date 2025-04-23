@@ -15,3 +15,6 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+        
+server:
+  port: ${PORT:8080} # usa a variável PORT do Render, ou 8080 como fallback
