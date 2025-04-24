@@ -1,16 +1,7 @@
-# FROM maven:3.9.6-eclipse-temurin-21 AS build
-# WORKDIR /app
-# COPY . .
-# RUN mvn clean package -DskipTests
-FROM maven:3-eclipse-temurin-17 AS build
-COPY . .
-RUN mvn clean package -DskipTests
-FROM eclipse-temurin:17-alpine
-COPY --from=build /target/rest-api-template-0.0.1-SNAPSHOT.jar rest-api-template.jar
-ENTRYPOINT ["java","-Dspring.profiles.active=render","-jar","rest-api-template.jar"]
+FROM eclipse-temurin:17-jdk
 
-FROM eclipse-temurin:21-jdk
 WORKDIR /app
-COPY --from=build /app/target/gerenciador_de_tarefas-0.0.1-SNAPSHOT.jar app.jar
+COPY target/seu-app.jar app.jar
+
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
