@@ -1,4 +1,4 @@
-package com.api.gerenciador_de_tarefas.repositoy;
+package com.api.gerenciador_de_tarefas.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.api.gerenciador_de_tarefas.model.Tarefa;

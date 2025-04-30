@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.api.gerenciador_de_tarefas.model.Tarefa;
-import com.api.gerenciador_de_tarefas.repositoy.TarefaRepository;
+import com.api.gerenciador_de_tarefas.repository.TarefaRepository;
 
 import jakarta.validation.Valid;
 
@@ -17,8 +17,12 @@ public class TarefaService {
     @Autowired
     private TarefaRepository tarefaRepository;
     
-    public List<Tarefa> listar() {
+    public List<Tarefa> listarTodos() {
         return tarefaRepository.findAll();
+    }
+
+    public Optional<Tarefa> listar(Long id) {
+        return tarefaRepository.findById(id);
     }
 
     public Tarefa criar(@Valid Tarefa tarefa) {

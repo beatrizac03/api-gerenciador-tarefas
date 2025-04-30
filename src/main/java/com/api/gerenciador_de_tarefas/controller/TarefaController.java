@@ -1,6 +1,7 @@
 package com.api.gerenciador_de_tarefas.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,15 +20,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+
 @RestController
 public class TarefaController {
     @Autowired
     private TarefaService tarefaService;
 
     @GetMapping("/tarefas")
-    public List<Tarefa> listar() {
-        return tarefaService.listar();
+    public List<Tarefa> listarTodos() {
+        return tarefaService.listarTodos();
     }
+
+    @GetMapping("/tarefas/{id}")
+    public Optional<Tarefa> listar(@PathVariable Long id) {
+        return tarefaService.listar(id);
+    }
+    
 
     @PostMapping("/tarefas")
     @ResponseStatus(HttpStatus.CREATED)
